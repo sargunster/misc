@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class ExtendedFlycam : MonoBehaviour
+/**
+ * Flying camera behaviour for Unity3D. Useful for looking around the game world without the limitations of the player.
+ */
+public class FlyCam : MonoBehaviour
 {
     public float CameraSensitivity = 150;
     public float MoveSpeed = 50;
