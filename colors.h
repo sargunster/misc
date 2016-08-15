@@ -1,3 +1,7 @@
+/**
+ * C header for terminal text formatting escape codes
+ */
+
 #pragma once
 
 #define RESET  "\x1B[0m"
