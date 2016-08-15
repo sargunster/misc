@@ -1,4 +1,4 @@
-/**
+/*
  * C header for terminal text formatting escape codes
  */
 
