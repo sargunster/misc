@@ -63,3 +63,7 @@ git config --global core.excludesfile ~/.gitignore
 echo Setting wallpaper
 wget $WALLPAPER -O ~/Pictures/wallpaper.png
 wallpaper ~/Pictures/wallpaper.png
+
+echo Setting up Android SDK
+echo "export ANDROID_HOME=/usr/local/opt/android-sdk" >> ~/.bashrc
+android
