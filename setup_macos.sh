@@ -2,7 +2,9 @@
 
 # Start config
 
-BREW="fish httpie jq"
+WALLPAPER="https://i.redd.it/cb12p2q4rocx.png"
+
+BREW="fish httpie jq mas wallpaper wget"
 
 CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin"
 
@@ -18,20 +20,19 @@ echo "Will install from mas: $MAS"
 echo Installing Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo Installing packages from Brew
+brew install $BREW
+
 echo Installing a CLI for the Mac App Store
-brew install mas
 read -p "Apple account email: " masemail
 read -p "Apple account password: " maspass
 mas signin "$masemail" "$masspass"
 
-echo Tapping into Brew Cask
-brew tap caskroom/cask
-
-echo Installing packages from Brew
-brew install $BREW
-
 echo Installing apps from App Store
 mas install $MAS
+
+echo Tapping into Brew Cask
+brew tap caskroom/cask
 
 echo Installing apps from Brew Cask
 brew cask install $CASK
@@ -50,3 +51,7 @@ read -p "Git Name: " gitname
 read -p "Git Email: " gitemail
 git config --global user.name "$gitname"
 git config --global user.email "$gitemail"
+
+echo Setting wallpaper
+wget $WALLPAPER -o ~/Pictures/wallpaper.png
+wallpaper ~/Pictures/wallpaper.png
