@@ -53,5 +53,5 @@ git config --global user.name "$gitname"
 git config --global user.email "$gitemail"
 
 echo Setting wallpaper
-wget $WALLPAPER -o ~/Pictures/wallpaper.png
+wget $WALLPAPER -O ~/Pictures/wallpaper.png
 wallpaper ~/Pictures/wallpaper.png
