@@ -38,3 +38,15 @@ brew cask install $CASK
 
 echo Installing Xamarin
 open "/usr/local/Caskroom/xamarin/latest/Install Xamarin.app"
+
+echo Setting up SSH key
+read -p "SSH Email: " sshemail
+ssh-keygen -t rsa -b 4096 -C "$sshemail"
+cat ~/.ssh/id_rsa.pub | pbcopy
+open https://github.com/settings/ssh
+
+echo Setting up Git
+read -p "Git Name: " gitname
+read -p "Git Email: " gitemail
+git config --global user.name "$gitname"
+git config --global user.email "$gitemail"
