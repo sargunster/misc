@@ -4,12 +4,14 @@
 
 WALLPAPER="https://i.redd.it/cb12p2q4rocx.png"
 
-BREW="fish httpie jq mas wallpaper wget"
+BREW="fish httpie jq mas wallpaper wget node watchman"
 
 CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin"
 
 #   "Xcode     Todoist  "
 MAS="497799835 585829637"
+
+NPM="react-native-cli"
 
 # End config
 
@@ -22,6 +24,9 @@ echo Installing Homebrew
 
 echo Installing packages from Brew
 brew install $BREW
+
+echo Installing packages from NPM
+npm install -g $NPM
 
 echo Installing a CLI for the Mac App Store
 read -p "Apple account email: " masemail
@@ -51,6 +56,9 @@ read -p "Git Name: " gitname
 read -p "Git Email: " gitemail
 git config --global user.name "$gitname"
 git config --global user.email "$gitemail"
+echo .DS_Store >> ~/.gitignore
+echo local.properties >> ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
 
 echo Setting wallpaper
 wget $WALLPAPER -O ~/Pictures/wallpaper.png
