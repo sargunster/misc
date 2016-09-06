@@ -15,9 +15,16 @@ NPM="react-native-cli"
 
 # End config
 
+read -p "Your name: " NAME
+read -p "Your email address: " EMAIL
+read -p "Your Apple account password: " MASPASS
+
 echo "Will install from brew: $BREW"
+echo "Will install from npm: $NPM"
 echo "Will install from brew cask: $CASK"
-echo "Will install from mas: $MAS"
+echo "Will install from app store: $MAS"
+
+read -p "Press Enter to continue"
 
 echo Installing Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -29,9 +36,7 @@ echo Installing packages from NPM
 npm install -g $NPM
 
 echo Installing a CLI for the Mac App Store
-read -p "Apple account email: " masemail
-read -p "Apple account password: " maspass
-mas signin "$masemail" "$masspass"
+mas signin "$EMAIL" "$MASPASS"
 
 echo Installing apps from App Store
 mas install $MAS
@@ -46,16 +51,13 @@ echo Installing Xamarin
 open "/usr/local/Caskroom/xamarin/latest/Install Xamarin.app"
 
 echo Setting up SSH key
-read -p "SSH Email: " sshemail
-ssh-keygen -t rsa -b 4096 -C "$sshemail"
+ssh-keygen -t rsa -b 4096 -C "$EMAIL"
 cat ~/.ssh/id_rsa.pub | pbcopy
 open https://github.com/settings/ssh
 
 echo Setting up Git
-read -p "Git Name: " gitname
-read -p "Git Email: " gitemail
-git config --global user.name "$gitname"
-git config --global user.email "$gitemail"
+git config --global user.name "$NAME"
+git config --global user.email "$EMAIL"
 echo .DS_Store >> ~/.gitignore
 echo local.properties >> ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
