@@ -4,7 +4,9 @@
 
 WALLPAPER="https://i.redd.it/cb12p2q4rocx.png"
 
-BREW="fish httpie jq mas wallpaper wget node watchman android-sdk"
+BREW="fish httpie jq mas wallpaper wget node watchman android-sdk ruby"
+
+GEM="cocoapods"
 
 CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin appcode slack"
 
@@ -34,6 +36,9 @@ brew install $BREW
 
 echo Installing packages from NPM
 npm install -g $NPM
+
+echo Installing Gem packages
+gem install $GEM
 
 echo Installing a CLI for the Mac App Store
 mas signin "$EMAIL" "$MASPASS"
