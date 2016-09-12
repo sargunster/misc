@@ -6,7 +6,7 @@ WALLPAPER="https://i.redd.it/cb12p2q4rocx.png"
 
 BREW="fish httpie jq mas wallpaper wget node watchman android-sdk cocoapods"
 
-CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin"
+CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin appcode slack"
 
 #   "Xcode     Todoist  "
 MAS="497799835 585829637"
