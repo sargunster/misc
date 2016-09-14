@@ -8,7 +8,7 @@ BREW="fish httpie jq mas wallpaper wget node watchman android-sdk ruby"
 
 GEM="cocoapods"
 
-CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin appcode slack"
+CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin appcode slack microsoft-office"
 
 #   "Xcode     Todoist  "
 MAS="497799835 585829637"
