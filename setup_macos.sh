@@ -4,11 +4,11 @@
 
 WALLPAPER="https://i.redd.it/cb12p2q4rocx.png"
 
-BREW="fish httpie jq mas wallpaper wget node watchman android-sdk ruby"
+BREW="fish httpie jq mas wallpaper wget node watchman android-sdk ruby valgrind"
 
 GEM="cocoapods"
 
-CASK="android-studio bartender cakebrew dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin appcode slack microsoft-office"
+CASK="android-studio bartender cakebrew clion dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin appcode slack microsoft-office"
 
 #   "Xcode     Todoist  "
 MAS="497799835 585829637"
