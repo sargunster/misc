@@ -4,11 +4,11 @@
 
 WALLPAPER="https://i.redd.it/cb12p2q4rocx.png"
 
-BREW="fish httpie jq mas wallpaper wget node watchman android-sdk ruby valgrind"
+BREW="fish httpie jq mas wallpaper wget node ruby"
 
 GEM="cocoapods"
 
-CASK="android-studio bartender cakebrew clion dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate xamarin appcode slack microsoft-office"
+CASK="android-studio bartender cakebrew clion dropbox firefox google-chrome google-drive intellij-idea java macpass numi textmate appcode slack microsoft-office"
 
 #   "Xcode     Todoist  "
 MAS="497799835 585829637"
@@ -45,15 +45,13 @@ mas signin "$EMAIL" "$MASPASS"
 
 echo Installing apps from App Store
 mas install $MAS
+sudo xcodebuild -license
 
 echo Tapping into Brew Cask
 brew tap caskroom/cask
 
 echo Installing apps from Brew Cask
 brew cask install $CASK
-
-echo Installing Xamarin
-open "/usr/local/Caskroom/xamarin/latest/Install Xamarin.app"
 
 echo Setting up SSH key
 ssh-keygen -t rsa -b 4096 -C "$EMAIL"
@@ -72,5 +70,6 @@ wget $WALLPAPER -O ~/Pictures/wallpaper.png
 wallpaper ~/Pictures/wallpaper.png
 
 echo Setting up Android SDK
+brew install android-sdk
 echo "export ANDROID_HOME=/usr/local/opt/android-sdk" >> ~/.bashrc
 android
